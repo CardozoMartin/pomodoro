@@ -2,6 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
 import { StyleSheet, Text, View, Platform, SafeAreaView } from "react-native";
 import Header from "./src/components/Header";
+import Timer from "./src/components/Timer";
 const color = ["#F7DC6F","#A2D9CE","#D7BDE2"]
 export default function App() {
   const [isWorking, setIsWorking] = useState(false);
@@ -10,7 +11,7 @@ export default function App() {
 
   return (
     <SafeAreaView style={[styles.container, {backgroundColor:color[currtenTime]}]}>
-      <View style={{ paddingTop: Platform.OS === "android" && 40 }}>
+      <View style={{flex:1,paddingHorizontal:15, paddingTop: Platform.OS === "android" && 40 }}>
         <Text style={{ fontSize: 40 }}>Pomodoro</Text>
 
         <Header
@@ -18,7 +19,7 @@ export default function App() {
           setCurrenTime={setCurrenTime}
           setTime={setTime}
         />
-        <Text style={{ fontSize: 40 }}>{time}</Text>
+        <Timer time={time}></Timer>
 
 
         <StatusBar style="auto" />
@@ -32,4 +33,4 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
   },
-});
+}); 

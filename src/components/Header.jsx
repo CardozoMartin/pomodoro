@@ -18,10 +18,10 @@ const Header = ({ setTime, currenTime, setCurrenTime }) => {
           }}
           style={[
             style.itemStyle,
-            currenTime !== index && { borderColor: "black",color:"white" },
+            currenTime !== index && { borderColor: "transparent" },
           ]}
         >
-          <Text>{item}</Text>
+          <Text style={{fontWeight:"bold"}}>{item}</Text>
         </TouchableOpacity>
       ))}
     </View>
